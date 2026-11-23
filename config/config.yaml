@@ -1,0 +1,58 @@
+# Итоговая конфигурация лабораторной работы. Вариант 1 (номер в списке 16:
+# variant = ((16 - 1) % 5) + 1 = 1), метод zscore.
+# Все значения выбраны по итогам EDA и обоснованы в docs/planning_session.md.
+
+variant: 1
+
+data:
+  train_path: data/UNSW_NB15_training-set.csv
+  test_path: data/UNSW_NB15_testing-set.csv
+  split_column: split
+  train_split: train
+  test_split: test
+  label_column: label
+  id_column: id
+  text_columns: [payload_preview, proto, service, state]
+  # payload_preview — недоверенный текст (вектор prompt injection), признаком не является.
+  exclude_columns: [id, split, label, attack_cat, payload_preview]
+
+features:
+  # Пустой список = все числовые колонки, кроме exclude_columns.
+  # Сужение набора не потребовалось: признаки разных масштабов приводит к
+  # единой шкале сама стандартизация, а почти константных колонок на train нет.
+  include: []
+
+method:
+  name: zscore          # вариант 1 -> zscore (config/variants.yaml)
+  params:
+    # Порог по правилу трёх сигм: флаг, если max по признакам |z| > 3.
+    # На train это ~26% строк — см. распределение score в ноутбуке (05_score_distribution.png).
+    k: 3.0
+    aggregation: max_abs_z   # max_abs_z | count | euclidean
+    ddof: 0                  # std по совокупности (numpy-соглашение)
+    min_features: 1
+    # На train нулевой дисперсии нет (проверено EDA), политика задаётся на будущее:
+    # колонка с std == 0 получает std = epsilon, чтобы не делить на ноль.
+    zero_variance: epsilon
+
+preprocessing:
+  # Числовых NaN в train/test нет (проверено EDA), но политика фиксируется:
+  # медианой по train — устойчивее нуля к тяжёлым хвостам, если NaN появятся.
+  missing: median
+  # signed_log1p проверен: сглаживает хвосты, но сжимает дискретные счётчики
+  # (ct_* почти неотличимы после log1p) и ухудшает разделимость; оставлен none.
+  transform: none
+  # none: сам z-score уже стандартизует признаки; доп. масштабирование избыточно.
+  scaling: none
+  # Все статистики (медианы, mean/std) считаются ТОЛЬКО по split == train.
+  fit_on: train
+
+paths:
+  models_dir: artifacts/models
+  plots_dir: artifacts/plots
+  reports_dir: artifacts/reports
+  artifacts_dir: artifacts
+
+logging:
+  level: INFO
+  file_enabled: false

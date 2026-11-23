@@ -1,0 +1,284 @@
+{
+  "n_rows": 175341,
+  "n_features": 39,
+  "features": [
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "missing": {},
+  "zero_variance_features": [],
+  "describe": {
+    "dur": {
+      "min": 0.0,
+      "max": 60.0,
+      "mean": 1.3594,
+      "std": 6.4802
+    },
+    "spkts": {
+      "min": 1.0,
+      "max": 9616.0,
+      "mean": 20.2987,
+      "std": 136.8876
+    },
+    "dpkts": {
+      "min": 0.0,
+      "max": 10974.0,
+      "mean": 18.9696,
+      "std": 110.2583
+    },
+    "sbytes": {
+      "min": 28.0,
+      "max": 12965233.0,
+      "mean": 8844.8438,
+      "std": 174765.6443
+    },
+    "dbytes": {
+      "min": 0.0,
+      "max": 14655550.0,
+      "mean": 14928.9186,
+      "std": 143654.2177
+    },
+    "rate": {
+      "min": 0.0,
+      "max": 1000000.003,
+      "mean": 95406.1871,
+      "std": 165400.9785
+    },
+    "sttl": {
+      "min": 0.0,
+      "max": 255.0,
+      "mean": 179.547,
+      "std": 102.94
+    },
+    "dttl": {
+      "min": 0.0,
+      "max": 254.0,
+      "mean": 79.6096,
+      "std": 110.5069
+    },
+    "sload": {
+      "min": 0.0,
+      "max": 5988000256.0,
+      "mean": 73454033.1941,
+      "std": 188357447.0002
+    },
+    "dload": {
+      "min": 0.0,
+      "max": 22422730.0,
+      "mean": 671205.5742,
+      "std": 2421312.3888
+    },
+    "sloss": {
+      "min": 0.0,
+      "max": 4803.0,
+      "mean": 4.953,
+      "std": 66.0051
+    },
+    "dloss": {
+      "min": 0.0,
+      "max": 5484.0,
+      "mean": 6.948,
+      "std": 52.733
+    },
+    "sinpkt": {
+      "min": 0.0,
+      "max": 84371.496,
+      "mean": 985.9769,
+      "std": 7242.2458
+    },
+    "dinpkt": {
+      "min": 0.0,
+      "max": 56716.824,
+      "mean": 88.2163,
+      "std": 987.0932
+    },
+    "sjit": {
+      "min": 0.0,
+      "max": 1460480.016,
+      "mean": 4976.2542,
+      "std": 44965.8465
+    },
+    "djit": {
+      "min": 0.0,
+      "max": 289388.2697,
+      "mean": 604.3538,
+      "std": 4061.0433
+    },
+    "swin": {
+      "min": 0.0,
+      "max": 255.0,
+      "mean": 116.2573,
+      "std": 127.001
+    },
+    "stcpb": {
+      "min": 0.0,
+      "max": 4294958913.0,
+      "mean": 969250421.9105,
+      "std": 1355264249.263
+    },
+    "dtcpb": {
+      "min": 0.0,
+      "max": 4294881924.0,
+      "mean": 968877027.0712,
+      "std": 1353999546.2257
+    },
+    "dwin": {
+      "min": 0.0,
+      "max": 255.0,
+      "mean": 115.0136,
+      "std": 126.8865
+    },
+    "tcprtt": {
+      "min": 0.0,
+      "max": 2.5189,
+      "mean": 0.0414,
+      "std": 0.0794
+    },
+    "synack": {
+      "min": 0.0,
+      "max": 2.1004,
+      "mean": 0.021,
+      "std": 0.0434
+    },
+    "ackdat": {
+      "min": 0.0,
+      "max": 1.5209,
+      "mean": 0.0204,
+      "std": 0.0405
+    },
+    "smean": {
+      "min": 28.0,
+      "max": 1504.0,
+      "mean": 136.7518,
+      "std": 204.6774
+    },
+    "dmean": {
+      "min": 0.0,
+      "max": 1458.0,
+      "mean": 124.1734,
+      "std": 258.3171
+    },
+    "trans_depth": {
+      "min": 0.0,
+      "max": 172.0,
+      "mean": 0.106,
+      "std": 0.7769
+    },
+    "response_body_len": {
+      "min": 0.0,
+      "max": 6558056.0,
+      "mean": 2144.2917,
+      "std": 54207.9673
+    },
+    "ct_srv_src": {
+      "min": 1.0,
+      "max": 63.0,
+      "mean": 9.3064,
+      "std": 10.7043
+    },
+    "ct_state_ttl": {
+      "min": 0.0,
+      "max": 6.0,
+      "mean": 1.3042,
+      "std": 0.9544
+    },
+    "ct_dst_ltm": {
+      "min": 1.0,
+      "max": 51.0,
+      "mean": 6.1939,
+      "std": 8.0525
+    },
+    "ct_src_dport_ltm": {
+      "min": 1.0,
+      "max": 51.0,
+      "mean": 5.3835,
+      "std": 8.0471
+    },
+    "ct_dst_sport_ltm": {
+      "min": 1.0,
+      "max": 46.0,
+      "mean": 4.2063,
+      "std": 5.7836
+    },
+    "ct_dst_src_ltm": {
+      "min": 1.0,
+      "max": 65.0,
+      "mean": 8.7299,
+      "std": 10.9562
+    },
+    "is_ftp_login": {
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 0.0149,
+      "std": 0.126
+    },
+    "ct_ftp_cmd": {
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 0.0149,
+      "std": 0.126
+    },
+    "ct_flw_http_mthd": {
+      "min": 0.0,
+      "max": 30.0,
+      "mean": 0.1331,
+      "std": 0.7012
+    },
+    "ct_src_ltm": {
+      "min": 1.0,
+      "max": 60.0,
+      "mean": 6.9558,
+      "std": 8.3215
+    },
+    "ct_srv_dst": {
+      "min": 1.0,
+      "max": 62.0,
+      "mean": 9.1008,
+      "std": 10.757
+    },
+    "is_sm_ips_ports": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0158,
+      "std": 0.1245
+    }
+  },
+  "created_at": "2026-11-23T08:42:43.412779+00:00"
+}
